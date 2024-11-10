@@ -49,7 +49,9 @@ export function UserButton() {
             <DropdownMenuContent className="w-56" align="end" forceMount>
               <DropdownMenuItem className="flex flex-col items-start gap-0">
                 <div className="text-sm font-bold">{user?.displayName}</div>
-                <div className="text-xs font-medium">{user?.email}</div>
+                <div className="text-xs text-muted-foreground">
+                  {user?.email}
+                </div>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
