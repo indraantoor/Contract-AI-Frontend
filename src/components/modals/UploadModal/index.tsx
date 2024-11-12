@@ -1,3 +1,6 @@
+'use client';
+
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { api } from '@/lib/api';
@@ -5,7 +8,8 @@ import { cn } from '@/lib/utils';
 import { useContractStore } from '@/store/zustand';
 import { useMutation } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FileText, Loader2, Sparkles, Trash } from 'lucide-react';
+import { Brain, FileText, Loader2, Sparkles, Trash } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
@@ -21,6 +25,8 @@ export function UploadModal({
   onUploadComplete,
 }: IUploadModalProps) {
   const { setAnalysisResults } = useContractStore();
+
+  const router = useRouter();
 
   const [detectedType, setDetectedType] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -79,6 +85,7 @@ export function UploadModal({
     },
     onSuccess(data) {
       setAnalysisResults(data);
+      setStep('done');
       onUploadComplete();
     },
     onError(error) {
@@ -225,7 +232,78 @@ export function UploadModal({
       case 'processing': {
         return (
           <AnimatePresence>
-            <motion.div>Waiting</motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="flex flex-col items-center justify-center py-8"
+            >
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              >
+                <Brain className="size-20 text-primary" />
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mt-6 text-lg font-semibold text-gray-700"
+              >
+                AI is analyzing your contract...
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="mt-2 text-sm text-gray-700"
+              >
+                This may take some time.
+              </motion.p>
+              <motion.div
+                className="mt-6 h-2 w-64 overflow-hidden rounded-full bg-gray-200"
+                initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 10, ease: 'linear' }}
+              >
+                <motion.div
+                  className="h-full bg-primary"
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 10, ease: 'linear' }}
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        );
+      }
+      case 'done': {
+        return (
+          <AnimatePresence>
+            <motion.div>
+              <Alert className="mt-4">
+                <AlertTitle>Analysis completed</AlertTitle>
+                <AlertDescription>
+                  Your contract has been analyzed. you can now view the results
+                </AlertDescription>
+              </Alert>
+
+              <motion.div className="relative mt-6 flex flex-col space-y-3">
+                <Button onClick={() => router.push(`/dashboard/results`)}>
+                  View results
+                </Button>
+                <Button variant={'outline'} onClick={handleClose}>
+                  Close
+                </Button>
+              </motion.div>
+            </motion.div>
           </AnimatePresence>
         );
       }
