@@ -1,7 +1,9 @@
 import { Header } from '@/components/Header';
+import { ModalProvider } from '@/providers/modals/modalProviders';
 import { ReactQueryProvider } from '@/providers/tanstack/reactQueryProvider';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Toaster } from 'sonner';
 import './globals.css';
 
 const geistSans = localFont({
@@ -32,7 +34,8 @@ export default function RootLayout({
       >
         <ReactQueryProvider>
           <Header />
-          {children}
+          <ModalProvider>{children}</ModalProvider>
+          <Toaster />
         </ReactQueryProvider>
       </body>
     </html>
