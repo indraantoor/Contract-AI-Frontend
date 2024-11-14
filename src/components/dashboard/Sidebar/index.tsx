@@ -1,5 +1,6 @@
 'use client';
 
+import { DotBackground } from '@/components/ui/dotBackground';
 import { cn } from '@/lib/utils';
 import { FileText, Home, LayoutDashboard, Settings } from 'lucide-react';
 import Link from 'next/link';
@@ -75,8 +76,8 @@ const Navlink = ({
         href={link.href}
         target={link.target}
         className={cn(
-          'group flex h-9 items-center gap-x-3 rounded-md px-3 text-sm font-semibold leading-5 text-black',
-          path === link.href ? 'bg-gray-200' : 'hover:bg-gray-200'
+          'group flex h-9 items-center gap-x-3 rounded-md px-3 text-sm leading-5 text-black',
+          path === link.href ? 'bg-gray-200 font-semibold' : 'hover:bg-gray-100'
         )}
       >
         <link.icon className="size-4 shrink-0" />
@@ -97,7 +98,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <Sidebar />
       </div>
       <div className="flex flex-1 flex-col overflow-hidden lg:ml-[280px]">
-        {children}
+        <DotBackground>{children}</DotBackground>
       </div>
     </div>
   );

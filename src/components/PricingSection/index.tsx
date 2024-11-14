@@ -11,6 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card';
+import { Cover } from '../ui/cover';
+import { GridBackground } from '../ui/gridBackground';
 
 export function PricingSection() {
   const { user } = useCurrentUser();
@@ -32,68 +34,70 @@ export function PricingSection() {
   };
 
   return (
-    <div className="container mx-auto bg-gradient-to-b from-background to-background/80 px-4 py-16">
-      <h2 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl">
-        Choose the plan that&apos;s right for you
-      </h2>
-      <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
-        Select the perfect plan for your needs. Upgrade anytime to unlock
-        premium features and support.
-      </p>
-      <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-        <PricingCard
-          title="Basic"
-          description="For comprehensive contract analysis"
-          price="Free"
-          period="/lifetime"
-          features={[
-            'Advanced contract analysis',
-            'Unlimited projects',
-            'Chat with your contract',
-            '10+ risks with severity levels',
-            '10+ opportunities with impact levels',
-            'Comprehensive contract summary',
-            'Improvement recommendations',
-            'Key clauses identification',
-            'Legal compliance assessment',
-            'Negotiation points',
-            'Contract duration analysis',
-            'Termination conditions summary',
-            'Compensation structure breakdown',
-            'Performance metrics identification',
-            'Intellectual property clause summary',
-          ]}
-          buttonText="Upgrade"
-          onButtonClick={handleUpgrade}
-        />
-        <PricingCard
-          title="Premium"
-          description="For comprehensive contract analysis"
-          price="$100"
-          highlight
-          period="/lifetime"
-          features={[
-            'Advanced contract analysis',
-            'Unlimited projects',
-            'Chat with your contract',
-            '10+ risks with severity levels',
-            '10+ opportunities with impact levels',
-            'Comprehensive contract summary',
-            'Improvement recommendations',
-            'Key clauses identification',
-            'Legal compliance assessment',
-            'Negotiation points',
-            'Contract duration analysis',
-            'Termination conditions summary',
-            'Compensation structure breakdown',
-            'Performance metrics identification',
-            'Intellectual property clause summary',
-          ]}
-          buttonText="Upgrade"
-          onButtonClick={handleUpgrade}
-        />
+    <GridBackground>
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="bg-white text-center text-4xl font-extrabold tracking-tight sm:text-5xl">
+          Choose the plan that&apos;s <Cover>right for you.</Cover>
+        </h2>
+        <p className="mx-auto mt-4 max-w-3xl bg-white text-center text-lg text-muted-foreground">
+          Select the perfect plan for your needs. Upgrade anytime to unlock
+          premium features and support.
+        </p>
+        <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
+          <PricingCard
+            title="Basic"
+            description="For comprehensive contract analysis"
+            price="Free"
+            period="/lifetime"
+            features={[
+              'Advanced contract analysis',
+              'Unlimited projects',
+              'Chat with your contract',
+              '10+ risks with severity levels',
+              '10+ opportunities with impact levels',
+              'Comprehensive contract summary',
+              'Improvement recommendations',
+              'Key clauses identification',
+              'Legal compliance assessment',
+              'Negotiation points',
+              'Contract duration analysis',
+              'Termination conditions summary',
+              'Compensation structure breakdown',
+              'Performance metrics identification',
+              'Intellectual property clause summary',
+            ]}
+            buttonText="Upgrade"
+            onButtonClick={handleUpgrade}
+          />
+          <PricingCard
+            title="Premium"
+            description="For comprehensive contract analysis"
+            price="$100"
+            highlight
+            period="/lifetime"
+            features={[
+              'Advanced contract analysis',
+              'Unlimited projects',
+              'Chat with your contract',
+              '10+ risks with severity levels',
+              '10+ opportunities with impact levels',
+              'Comprehensive contract summary',
+              'Improvement recommendations',
+              'Key clauses identification',
+              'Legal compliance assessment',
+              'Negotiation points',
+              'Contract duration analysis',
+              'Termination conditions summary',
+              'Compensation structure breakdown',
+              'Performance metrics identification',
+              'Intellectual property clause summary',
+            ]}
+            buttonText="Upgrade"
+            onButtonClick={handleUpgrade}
+          />
+        </div>
       </div>
-    </div>
+    </GridBackground>
   );
 }
 

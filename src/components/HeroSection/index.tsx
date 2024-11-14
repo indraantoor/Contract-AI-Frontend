@@ -11,8 +11,10 @@ import {
   Zap,
 } from 'lucide-react';
 import Link from 'next/link';
-import { Button, buttonVariants } from '../ui/button';
+import { AuroraBackground } from '../ui/auroraBackground';
+import { buttonVariants } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
+import { HoverBorderGradient } from '../ui/hoverBorderGradient';
 
 const features = [
   {
@@ -52,8 +54,8 @@ export function HeroSection() {
   const { user } = useCurrentUser();
 
   return (
-    <section className="w-full bg-gradient-to-b from-background to-background/80 py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto flex max-w-6xl flex-col items-center px-4 md:px-6">
+    <AuroraBackground>
+      <div className="container z-[1000] mx-auto mt-12 flex max-w-6xl flex-col items-center px-4 md:px-6">
         <Link
           href={'/dashboard'}
           className={cn(
@@ -67,7 +69,7 @@ export function HeroSection() {
           Introducing Simple Metrics for your team
         </Link>
         <div className="mb-12 w-full text-center">
-          <h1 className="mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl xl:text-6xl/none">
+          <h1 className="mb-4 from-primary to-secondary bg-clip-text text-4xl font-extrabold tracking-tight text-black sm:text-5xl xl:text-6xl/none">
             Revoltionzie Your Contracts
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-muted-foreground">
@@ -77,14 +79,15 @@ export function HeroSection() {
 
           {!user && (
             <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button
-                className="inline-flex items-center justify-center text-lg"
-                size={'lg'}
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
                 onClick={googleSignIn}
+                className="flex items-center space-x-2 bg-white px-12 py-4 text-black dark:bg-black dark:text-white"
               >
                 Get Started
                 <ArrowRight className="ml-2 size-5" />
-              </Button>
+              </HoverBorderGradient>
             </div>
           )}
 
@@ -107,6 +110,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+    </AuroraBackground>
   );
 }
