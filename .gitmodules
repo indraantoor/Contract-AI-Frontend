@@ -1,0 +1,3 @@
+[submodule "Contract-AI-Backend"]
+	path = Contract-AI-Backend
+	url = https://github.com/indraantoor/Contract-AI-Backend.git
