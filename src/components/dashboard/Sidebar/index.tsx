@@ -93,8 +93,12 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="flex h-screen bg-gray-100">
-      <Sidebar />
-      <div className="flex flex-1 flex-col overflow-hidden">{children}</div>
+      <div className="fixed">
+        <Sidebar />
+      </div>
+      <div className="flex flex-1 flex-col overflow-hidden lg:ml-[280px]">
+        {children}
+      </div>
     </div>
   );
 }

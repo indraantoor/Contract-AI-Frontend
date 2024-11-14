@@ -9,16 +9,10 @@ import {
 } from '@/components/ui/dropdownMenu';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { logout } from '@/lib/api';
+import { googleSignIn } from '@/lib/utils';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Icons } from '../icons';
-
-function googleSignIn(): Promise<void> {
-  return new Promise((resolve) => {
-    window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`;
-    resolve();
-  });
-}
 
 export function UserButton() {
   const { user } = useCurrentUser();
@@ -75,7 +69,9 @@ export function UserButton() {
         </>
       ) : (
         <>
-          <Button onClick={googleSignIn}>Sign In</Button>
+          <Button onClick={googleSignIn} variant="secondary">
+            Sign In
+          </Button>
         </>
       )}
     </div>
