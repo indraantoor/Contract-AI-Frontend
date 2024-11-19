@@ -6,6 +6,10 @@
 
   <h1 align="center">Contract Analysis AI</h1>
 
+
+https://github.com/user-attachments/assets/338deefe-615e-427d-ab9b-db1a5a60bbf9
+
+
   <p align="center">
  It quickly identifies risks, enhances compliance, and offers insights for faster negotiation using AI.
     <br />
@@ -140,13 +144,33 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-1. Login or sign up to access the application.
-2. Once on your dashboard page click on "New Contract" button.
-3. Drag and drop your contract file and make sure it is in "pdf" format and click on "Analyze Contract With AI" button.
-4. It will then detect the type of the contract and to finally completely analyze it, confirm and click on "Yes, I want to analyze it" button.
-5. Wait for the AI analysis to get completed.
-6. To view the results click on "View Results" button
-7. In the "FREE VERSION" you will see limited results and in "Premium" you will see full results. To See all details you can upgrade to premium.
+Login or sign up to access the application.
+
+<img width="1800" alt="sign up" src="https://github.com/user-attachments/assets/cbc92aa5-1c91-4bc7-bfc4-27a17ba7e6d7">
+
+Once on your dashboard page click on "New Contract" button.
+
+<img width="1800" alt="new contract" src="https://github.com/user-attachments/assets/2c8d75b0-c73d-4b53-a632-f0bfca1f7a1f">
+
+Drag and drop your contract file and make sure it is in "pdf" format and click on "Analyze Contract With AI" button. It will then detect the type of the contract and to finally completely analyze it, confirm and click on "Yes, I want to analyze it" button.
+
+Wait for the AI analysis to get completed.
+
+<img width="1800" alt="analyse loading" src="https://github.com/user-attachments/assets/b4deae68-9ae1-43c1-8ebd-8dd62a05fa69">
+
+To view the results click on "View Results" button
+
+<img width="1800" alt="view results" src="https://github.com/user-attachments/assets/127b186b-d2f7-44c1-8b10-9d71b8bad030">
+
+In the "FREE VERSION" you will see limited results and in "Premium" you will see full results. To See all details you can upgrade to premium.
+
+<img width="1800" alt="Screenshot 2024-11-19 at 3 25 39 PM" src="https://github.com/user-attachments/assets/0773e8c4-45eb-4760-bc82-2ebdd3d020e9">
+
+<img width="1800" alt="Screenshot 2024-11-19 at 3 26 11 PM" src="https://github.com/user-attachments/assets/a2dabe7a-a31b-495a-98ca-58c4aefdd9e8">
+
+<img width="1800" alt="Screenshot 2024-11-19 at 3 27 20 PM" src="https://github.com/user-attachments/assets/1846be58-34e8-4a5b-b7b4-f373768b6c2d">
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
