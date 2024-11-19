@@ -70,7 +70,7 @@ export function HeroSection() {
         </Link>
         <div className="mb-12 w-full text-center">
           <h1 className="mb-4 from-primary to-secondary bg-clip-text text-4xl font-extrabold tracking-tight text-black sm:text-5xl xl:text-6xl/none">
-            Revoltionzie Your Contracts
+            Revolutionize Your Contracts
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-muted-foreground">
             Harness the power of AI to analyze, understand, and optimize your

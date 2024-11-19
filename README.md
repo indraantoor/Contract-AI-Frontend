@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a id="readme-top"></a>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+
+  <h1 align="center">Contract Analysis AI</h1>
+
+  <p align="center">
+ It quickly identifies risks, enhances compliance, and offers insights for faster negotiation using AI.
+    <br />
+    <a href="https://github.com/indraantoor/Contract-AI-Frontend"><strong>Explore the docs »</strong></a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+Managing contracts can be a time consuming and costly process, but this AI powered platform is here to change that. Designed to simplify and streamline contract analysis, it quickly identifies potential risks, ensures compliance with regulations, and provides actionable insights to accelerate negotiations.
+
+With automation at its core, this platform eliminates the need for tedious manual reviews, drastically reducing legal expenses while improving accuracy. Whether you’re negotiating deals or managing ongoing agreements, this tool empowers businesses to take control of their contracts with speed, efficiency, and confidence.
+
+By transforming the way contracts are analyzed and reviewed, this project helps you focus on what truly matters closing deals and driving growth.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+- Next js
+- React js
+- Node js
+- Express js
+- Redis (Upstash)
+- Zustand
+- Tanstack React Query
+- Tanstack Table
+- Tailwind CSS
+- ShadCn
+- Stripe
+- Google Gemini AI
+- Passport js
+- OAuth,
+- MongoDB
+- Resend
+- Morgan
+- Multer
+- Recharts
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is an example of how to list things you need to use the software and how to install them.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Get a Google Gemini AI API Key at [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+2. Clone the repos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```sh
+   git clone https://github.com/indraantoor/Contract-AI-Frontend
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```sh
+   git clone https://github.com/indraantoor/Contract-AI-Backend
+   ```
 
-## Deploy on Vercel
+3. Install NPM packages In All Of These Cloned Directories
+   ```sh
+   npm install
+   ```
+4. In frontend directory create a ".env" file and paste your values for these variables
+   ```
+   NEXT_PUBLIC_API_URL=<YOUR_FRONTEND_URL>
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<YOUR_STRIPE_PUBLISHABLE_KEY>
+   ```
+5. In the backend directory create a ".env" file and paste your values for these variables
+   ```
+   MONGODB_URI=<YOUR_MONGODB_URI>
+   GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
+   GOOGLE_CLIENT_SECRET=<YOUR_GOOGLE_CLIENT_SECRET>
+   CLIENT_URL=<YOUR_FRONTEND_URL>
+   SESSION_SECRET=<YOUR_DEFINED_SESSION_SECRET>
+   UPSTASH_REDIS_REST_URL=<YOUR_UPSTASH_REDIS_REST_URL>
+   UPSTASH_REDIS_REST_TOKEN=<YOUR_UPSTASH_REDIS_TOKEN>
+   GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
+   RESEND_API_KEY=<YOUR_RESEND_API_KEY>
+   STRIPE_SECRET_KEY=<YOUR_STRIPE_SECRET_KEY>
+   ```
+6. Run the application
+   ```sh
+   Navigate To The Backend Directory
+   npm run dev
+   ```
+   ```sh
+   Navigate To The Frontend Directory
+   npm run dev (to run app in development mode)
+   npm start (to run app in production mode)
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+1. Login or sign up to access the application.
+2. Once on your dashboard page click on "New Contract" button.
+3. Drag and drop your contract file and make sure it is in "pdf" format and click on "Analyze Contract With AI" button.
+4. It will then detect the type of the contract and to finally completely analyze it, confirm and click on "Yes, I want to analyze it" button.
+5. Wait for the AI analysis to get completed.
+6. To view the results click on "View Results" button
+7. In the "FREE VERSION" you will see limited results and in "Premium" you will see full results. To See all details you can upgrade to premium.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Project Link: [https://github.com/indraantoor/Contract-AI-Frontend](https://github.com/indraantoor/Contract-AI-Frontend)
+
+<a href="https://in.linkedin.com/in/indraantoor"><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555" /></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
