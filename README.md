@@ -7,7 +7,7 @@
   <h1 align="center">Contract Analysis AI</h1>
 
 
-https://github.com/user-attachments/assets/338deefe-615e-427d-ab9b-db1a5a60bbf9
+https://github.com/user-attachments/assets/fc814d65-81dd-4bd6-ab63-9563f3a8a617
 
 
   <p align="center">
